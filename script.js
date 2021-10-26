@@ -77,8 +77,8 @@ function populateComicDetails(data) {
   document.getElementById("iframe").setAttribute("src", data.img);
   document.getElementById("title").innerHTML = data.title;
   document.getElementById("alt").innerHTML = data.alt;
-  document.getElementById("year").innerHTML = data.year;
-  document.getElementById("month").innerHTML = data.month;
+  document.getElementById("year").innerHTML = `&nbsp${data.year}&nbsp`;
+  document.getElementById("month").innerHTML = `${data.month}&nbsp`;
   document.getElementById("day").innerHTML = data.day;
 }
 

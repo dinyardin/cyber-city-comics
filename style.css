@@ -100,7 +100,6 @@ body {
   border-radius: 30px;
   cursor: pointer;
   font-weight: bold;
-  /* border: #2d3142; */
 }
 
 .button:disabled {
@@ -125,7 +124,7 @@ body {
   font-weight: bold;
   display: flex;
   justify-content: center;
-  margin: 20% 0;
+  margin: 50% 0;
 }
 
 #alt {
@@ -136,4 +135,6 @@ body {
 .date {
   margin-bottom: 0%;
   font-size: 20px;
+  display: flex;
+  justify-content: center;
 }
