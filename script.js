@@ -14,12 +14,7 @@ function getCurrentComicNumber() {
       console.log(res.num);
       currentNumber = res.num;
       currentNumber_reference = res.num;
-      document.getElementById("iframe").setAttribute("src", res.img);
-      document.getElementById("title").innerHTML = `Title: ${res.title}`;
-      document.getElementById("alt").innerHTML = res.alt;
-      document.getElementById("year").innerHTML = res.year;
-      document.getElementById("month").innerHTML = res.month;
-      document.getElementById("day").innerHTML = res.day;
+      populateComicDetails(res);
     })
     .catch((err) => {
       console.log(err);
@@ -33,13 +28,7 @@ async function getPreviousComic() {
   const newNumber = currentNumber - 1;
   const response = await fetch(`https://xkcd.com/${newNumber}/info.0.json`);
   await response.json().then((data) => {
-    console.log(data);
-    document.getElementById("iframe").setAttribute("src", data.img);
-    document.getElementById("title").innerHTML = `Title: ${data.title}`;
-    document.getElementById("alt").innerHTML = data.alt;
-    document.getElementById("year").innerHTML = data.year;
-    document.getElementById("month").innerHTML = data.month;
-    document.getElementById("day").innerHTML = data.day;
+    populateComicDetails(data);
   });
   currentNumber--;
 }
@@ -51,16 +40,19 @@ async function getNextComic() {
 
   const response = await fetch(`https://xkcd.com/${newNumber}/info.0.json`);
   await response.json().then((data) => {
-    console.log(data);
-    document.getElementById("iframe").setAttribute("src", data.img);
-    document.getElementById("title").innerHTML = `Title: ${data.title}`;
-    document.getElementById("alt").innerHTML = data.alt;
-    document.getElementById("year").innerHTML = data.year;
-    document.getElementById("month").innerHTML = data.month;
-    document.getElementById("day").innerHTML = data.day;
+    populateComicDetails(data);
   });
   currentNumber++;
   if (newNumber == currentNumber_reference) {
     document.getElementById("next").disabled = true;
   }
+}
+
+function populateComicDetails(data) {
+  document.getElementById("iframe").setAttribute("src", data.img);
+  document.getElementById("title").innerHTML = `Title: ${data.title}`;
+  document.getElementById("alt").innerHTML = data.alt;
+  document.getElementById("year").innerHTML = data.year;
+  document.getElementById("month").innerHTML = data.month;
+  document.getElementById("day").innerHTML = data.day;
 }
