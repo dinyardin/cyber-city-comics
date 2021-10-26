@@ -79,6 +79,11 @@ async function getAboutPage() {
   document.getElementById("iframe").setAttribute("src", "/about.html");
 }
 
+//Display current day's comic when logo is clicked
+document
+  .getElementById("logo")
+  .addEventListener("click", getCurrentComicNumber);
+
 //Helper function that populates comic details on page
 function populateComicDetails(data) {
   document.getElementById("iframe").setAttribute("src", data.img);
