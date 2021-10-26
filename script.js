@@ -4,6 +4,9 @@ let currentNumber_reference = null;
 
 //Displays the latest comic when page initially loads
 function getCurrentComicNumber() {
+  alert(
+    "Please install 'Moesif Origin & CORS Changer' extension on your Chrome to be able to bypath CORS errors and successfully fetch data. The extension can be found on Chrome Web Store by searching by its name. Thank you."
+  );
   document.getElementById("next").disabled = true;
   async function getCurrentNumber() {
     const response = await fetch("https://xkcd.com/info.0.json");
