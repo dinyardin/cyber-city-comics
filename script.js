@@ -79,6 +79,8 @@ async function getAboutPage() {
   document
     .getElementById("iframe")
     .setAttribute("src", "/components/about.html");
+
+  clearLeftPanel();
 }
 
 //Display subscribe page when subsribe link is clicked
@@ -90,6 +92,8 @@ async function getSubscribePage() {
   document
     .getElementById("iframe")
     .setAttribute("src", "/components/subscribe.html");
+
+  clearLeftPanel();
 }
 
 //Display contact page when contact link is clicked
@@ -99,6 +103,8 @@ async function getContactPage() {
   document
     .getElementById("iframe")
     .setAttribute("src", "/components/contact.html");
+
+  clearLeftPanel();
 }
 
 //Display current day's comic when logo is clicked
@@ -119,4 +125,14 @@ function populateComicDetails(data) {
 //Helper function that generates a random number between given ranges
 function getRandomNumber(maxLimit) {
   return Math.floor(Math.random() * maxLimit);
+}
+
+//Helper function to clear left panel
+function clearLeftPanel() {
+  document.getElementById("title").innerHTML = "";
+  document.getElementById("alt").innerHTML = "";
+  document.getElementById("year").innerHTML = "";
+  document.getElementById("month").innerHTML = "";
+  document.getElementById("day").innerHTML = "";
+  document.getElementById("date").innerText = "";
 }
