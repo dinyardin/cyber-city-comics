@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Architects Daughter", cursive;
   height: 100vh;
 }
 
@@ -28,12 +28,26 @@ body {
   width: 70vw;
   justify-content: end;
   margin-right: 2rem;
+  cursor: pointer;
+}
+
+.about:hover,
+.subscribe:hover,
+.contact:hover {
+  color: #ef8354;
+  font-style: italic;
 }
 
 .logo {
   justify-self: start;
   margin-left: 5rem;
   font-size: 2rem;
+  cursor: pointer;
+}
+
+.logo:hover {
+  color: #ef8354;
+  font-style: italic;
 }
 
 .container {
