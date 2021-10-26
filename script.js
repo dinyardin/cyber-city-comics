@@ -81,6 +81,26 @@ async function getAboutPage() {
     .setAttribute("src", "/components/about.html");
 }
 
+//Display subscribe page when subsribe link is clicked
+document
+  .getElementById("subscribe")
+  .addEventListener("click", getSubscribePage);
+
+async function getSubscribePage() {
+  document
+    .getElementById("iframe")
+    .setAttribute("src", "/components/subscribe.html");
+}
+
+//Display contact page when contact link is clicked
+document.getElementById("contact").addEventListener("click", getContactPage);
+
+async function getContactPage() {
+  document
+    .getElementById("iframe")
+    .setAttribute("src", "/components/contact.html");
+}
+
 //Display current day's comic when logo is clicked
 document
   .getElementById("logo")
