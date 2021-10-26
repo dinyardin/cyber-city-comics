@@ -76,7 +76,9 @@ async function getRandomComic() {
 document.getElementById("about").addEventListener("click", getAboutPage);
 
 async function getAboutPage() {
-  document.getElementById("iframe").setAttribute("src", "/about.html");
+  document
+    .getElementById("iframe")
+    .setAttribute("src", "/components/about.html");
 }
 
 //Display current day's comic when logo is clicked
