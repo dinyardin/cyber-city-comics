@@ -9,12 +9,40 @@ body {
   height: 100vh;
 }
 
+.nav {
+  height: 7vh;
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  background: #2d3142;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 30px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: end;
+  margin-right: 2rem;
+}
+
+.logo {
+  justify-self: start;
+  margin-left: 5rem;
+  font-size: 2rem;
+}
+
 .container {
-  height: 100vh;
+  height: 93vh;
   display: flex;
 }
 
 .left {
+  color: #4f5d75;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -24,7 +52,7 @@ body {
   width: 100%;
   max-width: 500px;
   overflow-y: auto;
-  background: grey;
+  background: #bfc0c0;
 }
 
 .right {
@@ -42,4 +70,8 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.button {
+  background: #ef8354;
 }
