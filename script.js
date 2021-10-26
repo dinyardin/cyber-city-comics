@@ -15,6 +15,11 @@ function getCurrentComicNumber() {
       currentNumber = res.num;
       currentNumber_reference = res.num;
       document.getElementById("iframe").setAttribute("src", res.img);
+      document.getElementById("title").innerHTML = `Title: ${res.title}`;
+      document.getElementById("alt").innerHTML = res.alt;
+      document.getElementById("year").innerHTML = res.year;
+      document.getElementById("month").innerHTML = res.month;
+      document.getElementById("day").innerHTML = res.day;
     })
     .catch((err) => {
       console.log(err);
@@ -30,6 +35,11 @@ async function getPreviousComic() {
   await response.json().then((data) => {
     console.log(data);
     document.getElementById("iframe").setAttribute("src", data.img);
+    document.getElementById("title").innerHTML = `Title: ${data.title}`;
+    document.getElementById("alt").innerHTML = data.alt;
+    document.getElementById("year").innerHTML = data.year;
+    document.getElementById("month").innerHTML = data.month;
+    document.getElementById("day").innerHTML = data.day;
   });
   currentNumber--;
 }
@@ -43,6 +53,11 @@ async function getNextComic() {
   await response.json().then((data) => {
     console.log(data);
     document.getElementById("iframe").setAttribute("src", data.img);
+    document.getElementById("title").innerHTML = `Title: ${data.title}`;
+    document.getElementById("alt").innerHTML = data.alt;
+    document.getElementById("year").innerHTML = data.year;
+    document.getElementById("month").innerHTML = data.month;
+    document.getElementById("day").innerHTML = data.day;
   });
   currentNumber++;
   if (newNumber == currentNumber_reference) {
