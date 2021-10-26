@@ -52,6 +52,26 @@ async function getNextComic() {
   }
 }
 
+//Displays a random comic when random button is clicked
+document.getElementById("random").addEventListener("click", getRandomComic);
+
+async function getRandomComic() {
+  document.getElementById("next").disabled = false;
+  const newNumber = getRandomNumber(currentNumber_reference);
+
+  const response = await fetch(`https://xkcd.com/${newNumber}/info.0.json`);
+  await response.json().then((data) => {
+    populateComicDetails(data);
+  });
+
+  console.log(newNumber);
+  if (newNumber == currentNumber_reference) {
+    document.getElementById("next").disabled = true;
+  }
+  //This is so that previous/next comics will start from this day as the new referance
+  currentNumber = newNumber;
+}
+
 //Helper function that populates comic details on page
 function populateComicDetails(data) {
   document.getElementById("iframe").setAttribute("src", data.img);
@@ -60,4 +80,9 @@ function populateComicDetails(data) {
   document.getElementById("year").innerHTML = data.year;
   document.getElementById("month").innerHTML = data.month;
   document.getElementById("day").innerHTML = data.day;
+}
+
+//Helper function that generates a random number between given ranges
+function getRandomNumber(maxLimit) {
+  return Math.floor(Math.random() * maxLimit);
 }
