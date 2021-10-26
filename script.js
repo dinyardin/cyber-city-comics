@@ -20,3 +20,23 @@ function getNextComic() {
       console.log(err);
     });
 }
+
+//https://xkcd.com/info.0.json
+
+function getCurrentComicNumber() {
+  document.getElementById("next").disabled = true;
+  async function getCurrentNumber() {
+    const response = await fetch("https://xkcd.com/info.0.json");
+    const data = await response.json();
+    return data;
+  }
+
+  getCurrentNumber()
+    .then((res) => {
+      console.log(res.num);
+      document.getElementById("iframe").setAttribute("src", res.img);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}

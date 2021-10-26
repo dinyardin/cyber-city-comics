@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>My Project</title>
   </head>
-  <body>
+  <body onload="getCurrentComicNumber()">
     <div class="container">
       <div class="left">
         <div class="comic-info">
@@ -27,19 +27,24 @@
           </dic>
         </div>
         <div class="buttons">
-          <button>previous</button>
-          <button>random</button>
-          <button>next</button>
+          <button class="previous">previous</button>
+          <button class="random">random</button>
+          <button id="next" class="next">next</button>
         </div>
       </div>
       <div class="right">
         <div class="iframe-wrapper">
           <iframe
+            id="iframe"
             class="iframe"
             height="100%"
             width="100%"
+            <!--
             src="https://imgs.xkcd.com/comics/slope_hypothesis_testing.png"
-          ></iframe>
+            --
+          >
+            ></iframe
+          >
         </div>
       </div>
     </div>
