@@ -72,6 +72,13 @@ async function getRandomComic() {
   currentNumber = newNumber;
 }
 
+//Display about page when about link is clicked
+document.getElementById("about").addEventListener("click", getAboutPage);
+
+async function getAboutPage() {
+  document.getElementById("iframe").setAttribute("src", "/about.html");
+}
+
 //Helper function that populates comic details on page
 function populateComicDetails(data) {
   document.getElementById("iframe").setAttribute("src", data.img);
