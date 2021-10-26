@@ -134,5 +134,4 @@ function clearLeftPanel() {
   document.getElementById("year").innerHTML = "";
   document.getElementById("month").innerHTML = "";
   document.getElementById("day").innerHTML = "";
-  document.getElementById("date").innerText = "";
 }
