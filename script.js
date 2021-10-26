@@ -75,7 +75,7 @@ async function getRandomComic() {
 //Helper function that populates comic details on page
 function populateComicDetails(data) {
   document.getElementById("iframe").setAttribute("src", data.img);
-  document.getElementById("title").innerHTML = `Title: ${data.title}`;
+  document.getElementById("title").innerHTML = data.title;
   document.getElementById("alt").innerHTML = data.alt;
   document.getElementById("year").innerHTML = data.year;
   document.getElementById("month").innerHTML = data.month;
