@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+}
+
+.left {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+  overflow-y: auto;
+  background: grey;
+}
+
+.right {
+  flex: 1 1 100%;
+}
+
+.iframe-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
