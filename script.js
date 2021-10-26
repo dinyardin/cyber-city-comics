@@ -1,6 +1,8 @@
+//Global variables
 let currentNumber = null;
 let currentNumber_reference = null;
 
+//Displays the latest comic when page initially loads
 function getCurrentComicNumber() {
   document.getElementById("next").disabled = true;
   async function getCurrentNumber() {
@@ -21,6 +23,7 @@ function getCurrentComicNumber() {
     });
 }
 
+//Displays the previous comic when previos button is clicked
 document.getElementById("previous").addEventListener("click", getPreviousComic);
 
 async function getPreviousComic() {
@@ -33,6 +36,7 @@ async function getPreviousComic() {
   currentNumber--;
 }
 
+//Displays the next comic when next button is clicked
 document.getElementById("next").addEventListener("click", getNextComic);
 
 async function getNextComic() {
@@ -48,6 +52,7 @@ async function getNextComic() {
   }
 }
 
+//Helper function that populates comic details on page
 function populateComicDetails(data) {
   document.getElementById("iframe").setAttribute("src", data.img);
   document.getElementById("title").innerHTML = `Title: ${data.title}`;
