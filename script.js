@@ -23,10 +23,11 @@ document.getElementById("previous").addEventListener("click", getPreviousComic);
 
 async function getPreviousComic() {
   document.getElementById("next").disabled = false;
-  const newNumber = currentNumber--;
+  const newNumber = currentNumber - 1;
   const response = await fetch(`https://xkcd.com/${newNumber}/info.0.json`);
   await response.json().then((data) => {
     console.log(data);
     document.getElementById("iframe").setAttribute("src", data.img);
   });
+  currentNumber--;
 }
